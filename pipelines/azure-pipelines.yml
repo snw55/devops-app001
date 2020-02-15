@@ -23,4 +23,5 @@ stages:
         - powershell: Write-Host Test
 
     deploySteps:
+      - checkout: templates
       - powershell: Write-Host Deploy
