@@ -11,3 +11,6 @@ trigger:
 
 stages:
 - template: /pipelines/lifecycle.yml@templates
+  parameters:
+    buildSteps:
+      - powershell: Write-Host Test
