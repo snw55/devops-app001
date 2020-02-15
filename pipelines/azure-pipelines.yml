@@ -13,4 +13,9 @@ stages:
 - template: /pipelines/lifecycle.yml@templates
   parameters:
     buildSteps:
-      - powershell: Write-Host Test
+      - powershell: Write-Host Build
+
+    testJobs:
+      - job: UnitTests
+        steps:
+        - powershell: Write-Host Test
