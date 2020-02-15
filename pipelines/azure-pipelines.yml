@@ -24,4 +24,8 @@ stages:
 
     deploySteps:
       - checkout: templates
-      - powershell: Write-Host Deploy
+      - task: AzurePowerShell@4
+        inputs:
+          azureSubscription: ${{ parameters.environment }}
+          scriptType: inlineScript
+          inline: Write-Host Deploy
