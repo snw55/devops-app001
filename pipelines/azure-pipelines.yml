@@ -17,5 +17,7 @@ stages:
 
     testJobs:
       - job: UnitTests
+        pool:
+          vmImage: ubuntu-latest
         steps:
         - powershell: Write-Host Test
