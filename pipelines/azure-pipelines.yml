@@ -12,5 +12,7 @@ trigger:
 stages:
 - template: /pipelines/lifecycle.yml@templates
   parameters:
+    pool:
+      vmImage: windows-latest
     buildSteps:
       - powershell: Write-Host Test
