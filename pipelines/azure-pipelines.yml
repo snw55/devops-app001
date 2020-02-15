@@ -9,8 +9,23 @@ resources:
 trigger:
 - "*"
 
-stages:
-- template: /pipelines/lifecycle.yml@templates
+extends:
+  template: /pipelines/stages/lifecycle.yml@templates
   parameters:
     buildSteps:
-      - powershell: Write-Host Test
+      - powershell: Write-Host Build
+
+    testJobs:
+      - job: UnitTests
+        pool:
+          vmImage: ubuntu-latest
+        steps:
+        - powershell: Write-Host Test
+
+    deploySteps:
+      - checkout: templates
+      # - task: AzurePowerShell@4
+      #   inputs:
+      #     azureSubscription: $[variables.environment]
+      #     scriptType: inlineScript
+      #     inline: Write-Host Deploy
