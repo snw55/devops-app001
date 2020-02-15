@@ -10,7 +10,7 @@ trigger:
 - "*"
 
 stages:
-- template: /pipelines/lifecycle.yml@templates
+- template: /pipelines/stages/lifecycle.yml@templates
   parameters:
     buildSteps:
       - powershell: Write-Host Build
@@ -21,3 +21,6 @@ stages:
           vmImage: ubuntu-latest
         steps:
         - powershell: Write-Host Test
+
+    deploySteps:
+      - powershell: Write-Host Deploy
