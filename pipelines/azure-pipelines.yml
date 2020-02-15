@@ -1,0 +1,13 @@
+resources:
+  repositories:
+  - repository: templates
+    type: github
+    name: snw55/devops-templates
+    ref: refs/heads/feature/lifecycle
+    endpoint: snw55
+
+trigger:
+- "*"
+
+stages:
+- template: /pipelines/lifecycle.yml@templates
