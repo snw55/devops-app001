@@ -28,3 +28,4 @@ extends:
       inputs:
         scriptType: inlineScript
         inline: Write-Host Deploy
+        azurePowerShellVersion: latestVersion
