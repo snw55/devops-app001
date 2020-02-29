@@ -23,7 +23,7 @@ extends:
       - powershell: Write-Host Test
 
     deploySteps:
-      - checkout: templates
+    - checkout: templates
       # - task: AzurePowerShell@4
       #   inputs:
       #     azureSubscription: foo
