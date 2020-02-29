@@ -26,7 +26,7 @@ extends:
     - checkout: templates
     - task: AzurePowerShell@4
       inputs:
-        azureSubscription: foo
+        azureSubscription: controlled-by-lifecycle
         scriptType: inlineScript
         inline: Write-Host Deploy
         azurePowerShellVersion: latestVersion
