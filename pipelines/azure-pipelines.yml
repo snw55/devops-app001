@@ -13,14 +13,14 @@ extends:
   template: /pipelines/stages/lifecycle.yml@templates
   parameters:
     buildSteps:
-      - powershell: Write-Host Build
+    - powershell: Write-Host Build
 
     testJobs:
-      - job: UnitTests
-        pool:
-          vmImage: ubuntu-latest
-        steps:
-        - powershell: Write-Host Test
+    - job: UnitTests
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+      - powershell: Write-Host Test
 
     deploySteps:
       - checkout: templates
